@@ -12,8 +12,6 @@
 <body>
     
     <?php 
-    // INCLUINDO O COMPONENTE REUTILIZÁVEL (assume views/header.php)
-    // Este include deve ser o primeiro item no body.
     include 'views/header.php'; 
     ?>
 
