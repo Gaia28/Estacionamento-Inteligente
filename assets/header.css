@@ -1,0 +1,118 @@
+/* --- ESTILOS DO NOVO CABEÇALHO FIXO --- */
+.main-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    width: 100%;
+    /* Deixa o cabeçalho fixo no topo */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    /* Flexbox para alinhar itens */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.system-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre os links */
+    font-size: 0.95em;
+}
+
+.user-info strong {
+    color: #ffc107; /* Amarelo para destacar o nome */
+}
+
+.user-info a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para o botão de Gerenciar Usuários */
+.admin-link {
+    background-color: #17a2b8; /* Azul claro */
+}
+
+.admin-link:hover {
+    background-color: #138496;
+}
+
+/* Estilo para o botão de Sair */
+.logout-link {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.logout-link:hover {
+    background-color: #c82333;
+}
+
+/* --- AJUSTES NO CORPO PARA O HEADER FIXO --- */
+
+/* Adiciona um padding no topo do body para que o conteúdo não fique debaixo do header */
+body {
+    padding-top: 80px; /* Deve ser maior que a altura do header (15px + 15px padding + altura do conteúdo) */
+    /* Remova o padding-top original se houver */
+}
+
+/* Estilo para o novo h1 (título da página) */
+.page-h1 {
+    color: #007bff;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0; /* Remove margem superior desnecessária após o padding do body */
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDADE DO HEADER --- */
+@media screen and (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+    }
+
+    .system-title {
+        margin-bottom: 10px;
+    }
+
+    .user-info {
+        flex-direction: row;
+        gap: 8px;
+        width: 100%;
+        justify-content: flex-start;
+        font-size: 0.8em;
+    }
+    
+    .user-info span {
+        /* Esconde o "Olá," para economizar espaço */
+        display: none; 
+    }
+    
+    .user-info strong {
+        display: inline;
+    }
+
+    /* Ajuste o padding do body novamente para a nova altura do header */
+    body {
+        padding-top: 100px; 
+    }
+    
+    .page-h1 {
+        font-size: 1.5em;
+    }
+}
