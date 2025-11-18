@@ -15,5 +15,17 @@ class UserModel {
         }
         return false;
     }
+    public function registerUser($username, $password) {
+        $db = getDbConnection();
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
+        try {
+            $stmt = $db->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+            return $stmt->execute([$username, $password_hash]);
+        } catch (PDOException $e) {
+            echo "usuário já cadastrado";
+            return false;
+        }
+    }
 }
 ?>
